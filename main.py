@@ -42,15 +42,13 @@ else:
 
 
 
-appid = os.getenv('APP_ID')
-
-weather_api_url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid={appid}"
+weather_api_url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid=35d90d11abcf8c775321a869e5bcaf50"
 
 response = requests.get(weather_api_url)
-json = response.json()
+jsonResponse = response.json()
 
 
-main = json['main']
+main = jsonResponse['main']
 current_temp = main['temp']
 print("\n\nThe current temperature is: "+str(current_temp))
 
